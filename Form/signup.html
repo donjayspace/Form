@@ -59,36 +59,28 @@
                 </div>
 
             </div>
-  <script>
-  function create(title, callback) {
+  
+    <script>
 
-  try {
+            var form = document.getElementById('sheetdb-form');
 
-    gapi.client.sheets.spreadsheets.create({
+        form.addEventListener("submit", e => {
 
-      properties: {
+          e.preventDefault();
 
-        title: Registration Form,
+          fetch(form.action, {
 
-      },
+              method : "POST",
 
-    }).then((response) => {
+              body: new FormData(document.getElementById("sheetdb-form")),
 
-      if (callback) callback(response);
+          }).then(
 
-      console.log('Spreadsheet ID: ' + response.result.spreadsheetId);
+              response => response.json()
 
-    });
+          ).then((html) => {
 
-  } catch (err) {
-
-    document.getElementById('content').innerText = err.message;
-
-    return;
-
-  }
-
-}
+            // you can put any JS code here
   </script>
 
 </body>
