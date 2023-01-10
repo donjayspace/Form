@@ -93,6 +93,25 @@ form .text h3 a{
 form .text h3 a:hover{
   text-decoration: underline;
 }
+
+
+.line{
+    position: relative;
+    height: 1px;
+    width: 100%;
+    margin: 36px 0;
+    background-color: #d4d4d4;
+}
+.line::before{
+    content: 'Or';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFF;
+    color: #8b8b8b;
+    padding: 0 15px;
+}
 .media-options a{
 
     display: flex;
